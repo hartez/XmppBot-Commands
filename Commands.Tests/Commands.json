@@ -1,0 +1,6 @@
+﻿[
+{FormatString:"{0} slaps {1}", Parameters:[{ParameterType: "User"},{ParameterType: "Argument", Index: 0, Default: "himself"}], Value: "slap", Help: "!slap [thing]"},
+{FormatString:"{0} hugs {1}", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "himself"}], Value: "hug"},
+{FormatString:"{0} smacks {1} around with a large trout", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "himself"}], Value: "smack"},
+{FormatString:"http://i.imgur.com/r7ZNHvz.gif", Parameters:[], Value: "slowclap"}
+]
