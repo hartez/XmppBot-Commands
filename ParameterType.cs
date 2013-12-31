@@ -6,6 +6,7 @@
         Command,
         Raw,
         Argument,
-        AllArguments
+        AllArguments,
+        Predefined
     }
 }

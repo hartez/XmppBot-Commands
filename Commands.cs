@@ -36,15 +36,22 @@ namespace XmppBot_Commands
             if(line.Command.ToLower() == "help")
             {
                 return "Here are the commands I know: \n" + _commands.OrderBy(c => c.Value).Aggregate(String.Empty,
-                    (s, command) => s + (s.Length > 0 ? "\n" : "") + (String.IsNullOrEmpty(command.Help) ? ("!" + command.Value) : command.Help));
+                    (s, command) => s + (s.Length > 0 ? "\n" : "") + (String.IsNullOrEmpty(command.Help) ? ("!" + command.ChatCommand) : command.Help));
             }
 
             foreach(Command command in _commands)
             {
-                if(command.Value.ToLower() == line.Command.ToLower())
+                if(command.ChatCommand.ToLower() == line.Command.ToLower())
                 {
-                    return String.Format(command.FormatString,
-                        command.Parameters.Select(p => EvalParam(p, line)).ToArray());
+                    if(command.Value == "FormatResponse")
+                    {
+                        return ResponseFormatter.Format(command, line);
+                    }
+
+                    if(command.Value == "Shell")
+                    {
+                        return Shell.Execute(command, line);
+                    }
                 }
             }
 
@@ -54,48 +61,6 @@ namespace XmppBot_Commands
         public string Name
         {
             get { return "Commands"; }
-        }
-
-        private object EvalParam(Parameter parameter, ParsedLine line)
-        {
-            if(parameter.ParameterType == ParameterType.Argument)
-            {
-                if(line.Args.Count() >= parameter.Index + 1)
-                {
-                    return line.Args[parameter.Index];
-                }
-
-                return parameter.Default;
-            }
-
-            if(parameter.ParameterType == ParameterType.AllArguments)
-            {
-                if(line.Args.Any())
-                {
-                    return line.Args.Aggregate(String.Empty, (s, s1) => s + (s.Length > 0 ? " " : "") + s1);
-                }
-
-                return parameter.Default;
-            }
-
-            switch(parameter.ParameterType)
-            {
-                case ParameterType.User:
-                    return line.User;
-                    break;
-                case ParameterType.Command:
-                    return line.Command;
-                    break;
-                case ParameterType.Raw:
-                    return line.Raw;
-                    break;
-                case ParameterType.Argument:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            return null;
         }
 
         private void Initialize(CommandsConfig config)

@@ -92,5 +92,19 @@ namespace Commands.Tests
 
             Debug.Write(plugin.Evaluate(pl));
         }
+
+        [Test]
+        public void should_display_directory()
+        {
+            var plugin = new CommandPlugin();
+
+            var pl = new ParsedLine("!dir", "Bob");
+
+            var result = plugin.Evaluate(pl);
+
+            Debug.WriteLine(result);
+
+            result.Should().Contain("Directory:");
+        }
     }
 }

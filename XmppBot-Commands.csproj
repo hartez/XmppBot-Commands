@@ -59,6 +59,8 @@
     <Compile Include="Parameter.cs" />
     <Compile Include="ParameterType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseFormatter.cs" />
+    <Compile Include="Shell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Commands.json">

@@ -1,6 +1,62 @@
-﻿[
-{FormatString:"{0} slaps {1}", Parameters:[{ParameterType: "User"},{ParameterType: "Argument", Index: 0, Default: "himself"}], Value: "slap", Help: "!slap [thing]"},
-{FormatString:"{0} hugs {1}", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "himself"}], Value: "hug"},
-{FormatString:"{0} smacks {1} around with a large trout", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "himself"}], Value: "smack"},
-{FormatString:"http://i.imgur.com/r7ZNHvz.gif", Parameters:[], Value: "slowclap"}
+﻿[{
+		ChatCommand : "slap",
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} slaps {1}"
+			}, {
+				ParameterType : "User"
+			}, {
+				ParameterType : "AllArguments",
+				Index : 0,
+				Default : "himself"
+			}
+		],
+		Help : "!slap [thing]"
+	}, {
+		ChatCommand : "hug",
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} hugs {1}"
+			}, {
+				ParameterType : "User"
+			}, {
+				ParameterType : "AllArguments",
+				Index : 0,
+				Default : "himself"
+			}
+		],
+		Help : "!smack [thing]"
+	}, {
+		ChatCommand : "smack",
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} smacks {1} around with a large trout"
+			}, {
+				ParameterType : "User"
+			}, {
+				ParameterType : "AllArguments",
+				Index : 0,
+				Default : "himself"
+			}
+		],
+		Help : "!smack [thing]"
+	}, {
+		ChatCommand : "slowclap",
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "http://i.imgur.com/r7ZNHvz.gif"
+			}
+		]
+	} , {
+		ChatCommand : "dir",
+		Value : "Shell",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "dir"
+			}]
+	}
 ]

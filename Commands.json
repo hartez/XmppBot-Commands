@@ -1,10 +1,93 @@
-﻿[
-{FormatString:"{0} slaps {1}", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "himself"}], Value: "slap", Help: "!slap [thing]"},
-{FormatString:"{0} hugs {1}", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "himself"}], Value: "hug", Help: "!smack [thing]"},
-{FormatString:"{0} dances. It is arhythmic and everyone else is embarrassed and uncomfortable.", Parameters:[{ParameterType: "User"}], Value: "dance"},
-{FormatString:"{0} {1}", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "gesticulates wildly"}], Value: "me", Help: "!me [thing to do]"},
-{FormatString:"{0} smacks {1} around with a large trout", Parameters:[{ParameterType: "User"},{ParameterType: "AllArguments", Index: 0, Default: "himself"}], Value: "smack", Help: "!smack [thing]"},
-{FormatString:"http://i.imgur.com/r7ZNHvz.gif", Parameters:[], Value: "slowclap"},
-{FormatString:"http://i.imgur.com/hh8NfJU.jpg", Parameters:[], Value: "facepalm"}
-
+﻿[{
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} slaps {1}"
+			}, {
+				ParameterType : "User"
+			}, {
+				ParameterType : "AllArguments",
+				Index : 0,
+				Default : "himself"
+			}
+		],
+		ChatCommand : "slap",
+		Help : "!slap [thing]"
+	}, {
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} hugs {1}"
+			}, {
+				ParameterType : "User"
+			}, {
+				ParameterType : "AllArguments",
+				Index : 0,
+				Default : "himself"
+			}
+		],
+		ChatCommand : "hug",
+		Help : "!smack [thing]"
+	},
+	{
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} dances. It is arhythmic and everyone else is embarrassed and uncomfortable."
+			}, {
+				ParameterType : "User"
+			}
+		],
+		ChatCommand : "dance"
+	},
+	{
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} {1}"
+			}, {
+				ParameterType : "User"
+			}, {
+				ParameterType : "AllArguments",
+				Index : 0,
+				Default : "gesticulates wildly"
+			}
+		],
+		ChatCommand : "me",
+		Help : "!me [thing to do]"
+	},
+	{
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "{0} smacks {1} around with a large trout"
+			}, {
+				ParameterType : "User"
+			}, {
+				ParameterType : "AllArguments",
+				Index : 0,
+				Default : "himself"
+			}
+		],
+		ChatCommand : "smack",
+		Help : "!smack [thing]"
+	},
+	{
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "http://i.imgur.com/r7ZNHvz.gif"
+			}
+		],
+		ChatCommand : "slowclap"
+	},
+	{
+		Value : "FormatResponse",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "http://i.imgur.com/hh8NfJU.jpg"
+			}
+		],
+		ChatCommand : "facepalm"
+	}
 ]
