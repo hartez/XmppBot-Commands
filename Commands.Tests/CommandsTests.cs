@@ -106,5 +106,20 @@ namespace Commands.Tests
 
             result.Should().Contain("Directory:");
         }
+
+        [Test]
+        public void weather()
+        {
+            var plugin = new CommandPlugin();
+
+            var pl = new ParsedLine("!temp", "Bob");
+
+            var result = plugin.Evaluate(pl);
+
+            Debug.WriteLine(result);
+
+            result.Should().Contain("F");
+            result.Should().Contain("C)");
+        }
     }
 }

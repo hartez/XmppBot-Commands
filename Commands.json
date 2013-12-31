@@ -89,5 +89,13 @@
 			}
 		],
 		ChatCommand : "facepalm"
+	},
+    {
+		ChatCommand : "temp",
+		Value : "Shell",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "([xml](Invoke-WebRequest -URI http://w1.weather.gov/xml/current_obs/KBDU.xml).Content).current_observation.temperature_string"
+			}]
 	}
 ]

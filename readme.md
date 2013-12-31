@@ -47,3 +47,6 @@ The third command uses ParameterType "Argument", which gets a single argument; "
 The fourth command uses a "Raw" ParameterType - it will pass in the raw command as entered. In this case, issuing "!echo everything" will result in "!echo everything".
 
 The last command doesn't use any parameters at all.
+
+
+[weather]: http://www.eclectrics.com/2009/09/getting-the-current-weather-conditions/
