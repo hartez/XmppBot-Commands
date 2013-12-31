@@ -121,5 +121,24 @@ namespace Commands.Tests
             result.Should().Contain("F");
             result.Should().Contain("C)");
         }
+
+
+        [Test]
+        public void scramble()
+        {
+            var plugin = new CommandPlugin();
+
+            var pl = new ParsedLine("!scramble", "Bob");
+
+            var result = plugin.Evaluate(pl);
+
+            Debug.WriteLine(result);
+
+            result.Should().Contain("B");
+            result.Should().Contain("o");
+            result.Should().Contain("b");
+
+            result.Length.Should().Be(3);
+        }
     }
 }

@@ -58,9 +58,7 @@
 				ParameterType : "Predefined",
 				Value : "dir"
 			}]
-	}
-
-    ,
+	},
     {
 		ChatCommand : "temp",
 		Value : "Shell",
@@ -68,5 +66,15 @@
 				ParameterType : "Predefined",
 				Value : "([xml](Invoke-WebRequest -URI http://w1.weather.gov/xml/current_obs/KBDU.xml).Content).current_observation.temperature_string"
 			}]
+	},
+    {
+		ChatCommand : "scramble",
+		Value : "Shell",
+		Parameters : [{
+				ParameterType : "Predefined",
+				Value : "New-Object System.String((Get-Random -InputObject (\"{0}\".ToCharArray()) -Count (\"{0}\".Length)),0,\"{0}\".Length)"
+			}, {ParameterType : "User"}]
 	}
+
+    
 ]

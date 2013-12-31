@@ -10,14 +10,15 @@ namespace XmppBot_Commands
     {
         public static string Execute(Command command, ParsedLine line)
         {
-            var cmd = command.Parameters.First().Eval(line);
+            var standardArgs = "-NoLogo -OutputFormat Text -NonInteractive -WindowStyle Hidden -NoProfile -EncodedCommand ";
 
-            var standardArgs = "-NoLogo -OutputFormat Text -NonInteractive -WindowStyle Hidden -NoProfile ";
+            var cmd = ResponseFormatter.Format(command, line);
 
-            var args = standardArgs +
-                       command.Parameters.Aggregate(String.Empty, (s, p) => s + (s.Length > 0 ? " " : "") + p.Eval(line));
+            cmd = Convert.ToBase64String(Encoding.Unicode.GetBytes(cmd));
 
-            var info = new ProcessStartInfo()
+            var args = standardArgs + cmd;
+
+            var info = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
                     RedirectStandardOutput = true,
@@ -26,10 +27,10 @@ namespace XmppBot_Commands
                     Arguments = args
                 };
 
-            var proc = new Process() {StartInfo = info};
+            var proc = new Process {StartInfo = info};
             proc.Start();
 
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             while (!proc.StandardOutput.EndOfStream)
             {
