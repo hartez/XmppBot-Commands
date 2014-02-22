@@ -75,6 +75,4 @@
 				Value : "New-Object System.String((Get-Random -InputObject (\"{0}\".ToCharArray()) -Count (\"{0}\".Length)),0,\"{0}\".Length)"
 			}, {ParameterType : "User"}]
 	}
-
-    
 ]

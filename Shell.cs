@@ -35,7 +35,7 @@ namespace XmppBot_Commands
             while (!proc.StandardOutput.EndOfStream)
             {
                 var s = proc.StandardOutput.ReadLine();
-                sb.Append(s);
+                sb.Append(s + "\r\n");
             }
 
             return sb.ToString();

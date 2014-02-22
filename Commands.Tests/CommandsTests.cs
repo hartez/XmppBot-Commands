@@ -122,7 +122,6 @@ namespace Commands.Tests
             result.Should().Contain("C)");
         }
 
-
         [Test]
         public void scramble()
         {
@@ -138,7 +137,7 @@ namespace Commands.Tests
             result.Should().Contain("o");
             result.Should().Contain("b");
 
-            result.Length.Should().Be(3);
+            result.Trim().Length.Should().Be(3);
         }
     }
 }
